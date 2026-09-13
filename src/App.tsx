@@ -1,9 +1,11 @@
 import Nav from "./components/nav.tsx";
+import Hero from "./components/Hero.tsx";
 
 function App() {
   return (
     <>
       <Nav />
+      <Hero/>
     </>
   );
 }

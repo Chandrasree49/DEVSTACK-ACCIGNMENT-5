@@ -7,24 +7,22 @@ import technologies from "../data/technologies.json";
 const Technologies = () => {
   const [stack, setStack] = useState([]);
 
-  // Add technology to stack
+ 
   const addToStack = (technologies) => {
     const alreadyAdded = stack.some((item) => item.id === technologies.id);
 
-    // Duplicate warning
+   
     if (alreadyAdded) {
       toast.warning(`${technologies.name} is already in your stack!`);
       return;
     }
 
-    // Add technology
     setStack((prevStack) => [...prevStack, technologies]);
 
-    // Success notification
+   
     toast.success(`${technologies.name} added to your stack!`);
   };
 
-  // Remove one technology
   const removeFromStack = (id) => {
     const technology = stack.find((item) => item.id === id);
 
@@ -87,12 +85,12 @@ const Technologies = () => {
                       {technology.name}
                     </h3>
 
-                    {/* Description */}
+                  
                     <p className="mt-2 min-h-[72px] text-sm leading-6 text-gray-500">
                       {technology.description}
                     </p>
 
-                    {/* Category */}
+                   
                     <div className="mt-3">
                       <span className="inline-flex rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
                         {technology.category}
@@ -100,12 +98,12 @@ const Technologies = () => {
                     </div>
 
                     <div className="mt-5 flex items-center justify-between">
-                      {/* Difficulty */}
+                   
                       <span className="text-xs text-gray-500">
                         {technology.difficulty}
                       </span>
 
-                      {/* Rating */}
+               
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-400">★</span>
 
@@ -115,7 +113,6 @@ const Technologies = () => {
                       </div>
                     </div>
 
-                    {/* Add To Stack Button */}
                     <button
                       type="button"
                       onClick={() => addToStack(technology)}
@@ -134,7 +131,7 @@ const Technologies = () => {
             </div>
 
             <aside className="h-fit rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-  {/* Header */}
+
   <div>
     <h3 className="text-lg font-semibold text-gray-900">
       Your Stack
@@ -147,7 +144,7 @@ const Technologies = () => {
     </p>
   </div>
 
-  {/* Empty State */}
+ 
   {stack.length === 0 && (
     <div className="mt-8 rounded-lg border border-dashed border-gray-200 p-6 text-center">
       <p className="text-sm font-medium text-gray-600">
@@ -156,7 +153,7 @@ const Technologies = () => {
     </div>
   )}
 
-  {/* Stack Items */}
+  
   {stack.length > 0 && (
     <div className="mt-6 flex flex-col gap-3">
       {stack.map((technology) => (
@@ -164,7 +161,7 @@ const Technologies = () => {
           key={technology.id}
           className="flex items-center gap-3 rounded-lg border border-gray-100 bg-gray-50 p-3"
         >
-          {/* Icon */}
+     
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-white">
             <img
               src={technology.icon}
@@ -173,7 +170,6 @@ const Technologies = () => {
             />
           </div>
 
-          {/* Name + Category */}
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-semibold text-gray-800">
               {technology.name}
@@ -184,7 +180,7 @@ const Technologies = () => {
             </p>
           </div>
 
-          {/* Remove */}
+       
           <button
             type="button"
             onClick={() => removeFromStack(technology.id)}
@@ -196,7 +192,7 @@ const Technologies = () => {
         </div>
       ))}
 
-      {/* Remove All Button */}
+    
       <button
         type="button"
         onClick={removeAll}

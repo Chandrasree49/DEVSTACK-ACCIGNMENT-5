@@ -13,14 +13,15 @@ const Hero = () => {
           </h1>
 
           <p className="mt-6 max-w-[510px] text-[15px] leading-7 text-[#667085]">
-            Discover the technologies, tools, and frameworks that help you build
-            modern, scalable applications faster.
+            Explore frontend, backend, database, and tooling options, compare
+            them side by side, and put together the stack that fits your next
+            project.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#technologies"
-              className="rounded-lg bg-[#e60073] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#c90065]"
+              className="rounded-lg bg-gradient-to-r from-[#F97316] to-[#EC4899] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
             >
               Explore Technologies
             </a>

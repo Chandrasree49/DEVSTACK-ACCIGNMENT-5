@@ -1,27 +1,15 @@
 import Logo from "../assets/logo-text.png";
 
-const navItems = [
-  "Home",
-  "Technologies",
-  "Projects",
-  "About",
-  "Contact",
-];
+const navItems = ["Home", "Technologies", "Projects", "About", "Contact"];
 
 const Nav = () => {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#0099ff] bg-white">
+    <header className="sticky top-0 z-50 bg-white">
       <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-6">
-
         <a href="#" className="shrink-0">
-          <img
-            src={Logo}
-            alt="Dev Stack"
-            className="w-[125px]"
-          />
+          <img src={Logo} alt="Dev Stack" className="w-[125px]" />
         </a>
 
-  
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8">
             {navItems.map((item, index) => (

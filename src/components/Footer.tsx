@@ -2,8 +2,8 @@ import Logo from "../assets/logo-text.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t-[3px] border-[#1677FF] bg-white">
-      <div className="mx-auto max-w-[1050px] px-6 pt-14">
+    <footer className="bg-white">
+      <div className="mx-auto w-full max-w-[1180px] px-6 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-5">
           <div className="md:col-span-2">
             <div className="flex items-center">
@@ -19,7 +19,6 @@ const Footer = () => {
               modern software.
             </p>
 
-            
             <div className="mt-5 flex gap-5 text-[12px] font-medium">
               <a
                 href="#"
@@ -44,7 +43,6 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <div>
             <h3 className="mb-4 text-[11px] font-bold uppercase tracking-wide text-[#111827]">
               Product
@@ -95,7 +93,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="md:mt-0">
             <h3 className="mb-4 text-[11px] font-bold uppercase tracking-wide text-[#111827]">
               Legal
@@ -117,7 +115,6 @@ const Footer = () => {
           </div>
         </div>
 
-        
         <div className="mt-12 border-t border-[#EDF0F5]" />
 
         <div className="flex flex-col gap-3 py-7 text-[11px] text-[#A0AEC0] sm:flex-row sm:items-center sm:justify-between">

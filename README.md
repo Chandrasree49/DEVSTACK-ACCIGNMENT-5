@@ -1,78 +1,28 @@
-# React + TypeScript + Vite
+Name of your project-DEVSTACK
+A little description-DevStack is a modern technology stack builder where users can explore popular web technologies and create their own development stack. Users can add technologies to their stack, remove them, and manage their selections easily.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technology that you use-react,json,tailwind css,daisy ui,toastify,loading,vite.
+3 features about your project-Build Your Own Stack,Explore Technologies,Interactive Notifications
 
-Currently, two official plugins are available:
+React Questions & Answers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. What is JSX, and why is it used in React?
+   JSX is HTML-like syntax used in React to write and describe UI components easily.
 
-## React Compiler
+2. What is the difference between props and state?
+   Props are data passed from a parent to a child, while state is data managed and changed inside a component.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+3. What does the `useState` hook do, and where did you use it in this project?
+   `useState` stores and updates component data, and I used it to manage the selected stack and loading state.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+   `useEffect` runs side effects after rendering, and I used it to manage the loading process for the technology data.
 
-## Expanding the ESLint configuration
+5. Why does every item in a `.map()` list need a unique `key` prop?
+   A unique `key` helps React identify each list item and update the UI efficiently.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+6. What is conditional rendering? Show one place you used it.
+   Conditional rendering shows UI based on a condition, such as displaying **"Your stack is empty"** when `stack.length === 0`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+   A parent passes data through props, and a child can communicate back by calling a function passed through props.

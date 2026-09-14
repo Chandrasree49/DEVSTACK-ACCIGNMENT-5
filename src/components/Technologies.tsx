@@ -4,11 +4,21 @@ import "react-toastify/dist/ReactToastify.css";
 
 import technologies from "../data/technologies.json";
 
-const Technologies = () => {
-  const [stack, setStack] = useState([]);
-  const [loading, setLoading] = useState(true);
+type Technology = {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  icon: string;
+  rating: number;
+  difficulty: string;
+  badge: string;
+};
 
- 
+const Technologies = () => {
+  const [stack, setStack] = useState<Technology[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -17,7 +27,7 @@ const Technologies = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const addToStack = (technology) => {
+  const addToStack = (technology: Technology) => {
     const alreadyAdded = stack.some((item) => item.id === technology.id);
 
     if (alreadyAdded) {
@@ -30,7 +40,7 @@ const Technologies = () => {
     toast.success(`${technology.name} added to your stack!`);
   };
 
-  const removeFromStack = (id) => {
+  const removeFromStack = (id: number) => {
     const technology = stack.find((item) => item.id === id);
 
     setStack((prevStack) => prevStack.filter((item) => item.id !== id));
@@ -54,7 +64,6 @@ const Technologies = () => {
     <>
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-         
           <div className="mb-10">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
               Explore{" "}
@@ -69,13 +78,10 @@ const Technologies = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
-           
             <div>
-             
               {loading ? (
                 <div className="flex min-h-[400px] items-center justify-center rounded-xl border border-gray-200 bg-white">
                   <div className="flex flex-col items-center gap-3">
-                  
                     <span className="loading loading-spinner loading-lg text-purple-600"></span>
 
                     <p className="text-sm font-medium text-gray-500">
@@ -84,9 +90,8 @@ const Technologies = () => {
                   </div>
                 </div>
               ) : (
-               
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                  {technologies.map((technology) => {
+                  {technologies.map((technology: Technology) => {
                     const isAdded = stack.some(
                       (item) => item.id === technology.id
                     );
@@ -96,7 +101,6 @@ const Technologies = () => {
                         key={technology.id}
                         className="flex flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
                       >
-                       
                         <div className="flex items-start justify-between">
                           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-50">
                             <img
@@ -115,13 +119,11 @@ const Technologies = () => {
                           {technology.name}
                         </h3>
 
-                     
                         <p className="mt-2 min-h-[72px] text-sm leading-6 text-gray-500">
                           {technology.description}
                         </p>
 
                         <div className="mt-5 flex items-center justify-between gap-3">
-                         
                           <span className="inline-flex rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
                             {technology.category}
                           </span>
@@ -130,7 +132,6 @@ const Technologies = () => {
                             {technology.difficulty}
                           </span>
 
-                    
                           <div className="flex items-center gap-1">
                             <span className="text-yellow-400">★</span>
 
@@ -140,7 +141,6 @@ const Technologies = () => {
                           </div>
                         </div>
 
-                        
                         <button
                           type="button"
                           onClick={() => addToStack(technology)}
@@ -161,7 +161,6 @@ const Technologies = () => {
             </div>
 
             <aside className="h-fit rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">
                   Your Stack
@@ -173,7 +172,6 @@ const Technologies = () => {
                 </p>
               </div>
 
-              
               {stack.length === 0 && (
                 <div className="mt-8 rounded-lg border border-dashed border-gray-200 p-6 text-center">
                   <p className="text-sm font-medium text-gray-600">
@@ -189,7 +187,6 @@ const Technologies = () => {
                       key={technology.id}
                       className="flex items-center gap-3 rounded-lg border border-gray-100 bg-gray-50 p-3"
                     >
-                 
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-white">
                         <img
                           src={technology.icon}
@@ -197,7 +194,6 @@ const Technologies = () => {
                           className="h-6 w-6 object-contain"
                         />
                       </div>
-
 
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-semibold text-gray-800">
@@ -209,7 +205,6 @@ const Technologies = () => {
                         </p>
                       </div>
 
-                   
                       <button
                         type="button"
                         onClick={() => removeFromStack(technology.id)}
@@ -221,7 +216,6 @@ const Technologies = () => {
                     </div>
                   ))}
 
-            
                   <button
                     type="button"
                     onClick={removeAll}

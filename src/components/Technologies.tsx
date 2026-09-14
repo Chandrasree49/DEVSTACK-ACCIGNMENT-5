@@ -49,11 +49,13 @@ const Technologies = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-              Technologies
+            Explore the <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
+    Technologies
+  </span>
             </h2>
 
             <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-500">
-              Explore technologies and build your ideal development stack.
+            Pick one technology per category to build your ideal stack.
             </p>
           </div>
 
@@ -90,28 +92,28 @@ const Technologies = () => {
                       {technology.description}
                     </p>
 
-                   
-                    <div className="mt-3">
-                      <span className="inline-flex rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
-                        {technology.category}
-                      </span>
-                    </div>
+                    <div className="mt-5 flex items-center justify-between gap-3">
+  
 
-                    <div className="mt-5 flex items-center justify-between">
-                   
-                      <span className="text-xs text-gray-500">
-                        {technology.difficulty}
-                      </span>
+  <span className="inline-flex rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
+    {technology.category}
+  </span>
 
-               
-                      <div className="flex items-center gap-1">
-                        <span className="text-yellow-400">★</span>
 
-                        <span className="text-sm font-semibold text-gray-700">
-                          {technology.rating}
-                        </span>
-                      </div>
-                    </div>
+  <span className="text-xs text-gray-500">
+    {technology.difficulty}
+  </span>
+
+
+  <div className="flex items-center gap-1">
+    <span className="text-yellow-400">★</span>
+
+    <span className="text-sm font-semibold text-gray-700">
+      {technology.rating}
+    </span>
+  </div>
+
+</div>
 
                     <button
                       type="button"
